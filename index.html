@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarthak Nimble Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .contact-icons {
+            margin-top: 20px;
+        }
+
+        .contact-icons a {
+            color: #686565;
+            font-size: 24px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .contact-icons a:hover {
+            color: #ffe600;
+            /* Color on hover */
+        }
+
+/* Style for navigation links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff; /* Text color for navigation links */
+    text-decoration: none;
+}
+
+/* Style for hamburger menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff; /* Color of the hamburger icon */
+}
+
+/* Media queries for mobile screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust based on your navbar height */
+        right: 0;
+        background-color: #333; /* Ensure background color matches your design */
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Optional: Add shadow for better visibility */
+        z-index: 1000; /* Ensure the menu appears above other content */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .nav-links a {
+        color: #fff; /* Ensure text color is readable */
+        font-size: 18px; /* Adjust font size as needed */
+    }
+
+    .nav-links a:hover {
+        color: #ffe600; /* Hover color */
+    }
+}
+
+
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('registrationForm');
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+        
+            // Existing function for handling the hamburger menu
+            hamburger.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+            });
+        
+            // Existing function for handling form submission
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                handleFormSubmission(form);
+            });
+        });
+        
+        // New function to handle form submission
+        function handleFormSubmission(form) {
+            const formData = new FormData(form);
+        
+            if (formData.has('access_key') && formData.has('full-name') && formData.has('email')) {
+                fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            alert("Form submitted successfully.");
+                            form.reset();
+                        } else {
+                            console.log('Form submission failed.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            } else {
+                console.error('Form is missing required fields.');
+            }
+        }
+        
+    </script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo"><img src="" alt="">Full-Stack Developer / Entrepreneur</a>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i> <!-- Hamburger icon -->
+            </div>
+            <ul class="nav-links">
+                <li><a href="#section1">Home</a></li>
+                <li><a href="#section2">About</a></li>
+                <li><a href="#section3">Education</a></li>
+                <li><a href="#section6">Achievements</a></li>
+                <li><a href="#section4">Skills</a></li>
+                <li><a href="#section5">Projects</a></li>
+                <li><a href="#section7">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+
+    <!-- <section class="section1" id="section1">
+        <div class="div1">
+
+            <h1>Welcome to Sarthak Nimble’s Professional Journey</h1>
+        <p style="color: antiquewhite;"> Explore My Achievements and Skills</p>
+        </div>
+        
+    </section> -->
+    <section class="section1" id="section1">
+        <div class="div1">
+            <h1 style="color: rgb(255, 218, 10);">Welcome to Sarthak Nimble’s Professional Journey</h1>
+            <p style="color: antiquewhite;">Explore My Achievements and Skills</p>
+
+            <div class="contact-icons">
+                <a href="mailto:sarthknimble@outlook.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+918421851149" title="Call">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="https://wa.me/918421851149" title="WhatsApp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://github.com/sarthak-13N/" title="GitHub" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/sarthak-nimble1642" title="LinkedIn" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="section2">
+        <h1>Summary</h1>
+        <p>As a Full Stack Java Developer with a robust background in both frontend and backend technologies,
+            I excel in bridging technical expertise with business needs. I implemented a responsive design strategy
+            that increased mobile traffic by 50%, demonstrating my ability to enhance user experience and drive business
+            growth.
+            I led the development of a multi-threaded server application, which reduced data processing time by 40%,
+            showcasing my proficiency in optimizing performance and efficiency.
+
+            In addition to my technical skills, I bring strong project management capabilities to the table.
+            I effectively coordinate cross-functional teams to deliver projects on time and within budget,
+            ensuring alignment with business objectives. My experience includes defining project scopes,
+            managing timelines, and mitigating risks, all while maintaining a focus on delivering high-quality
+            solutions that meet client and stakeholder expectations.</p>
+    </section>
+
+    <section id="section3">
+        <h1>Education</h1>
+        <p>Details about my educational background are listed below.</p>
+
+        <div class="education-container">
+            <div class="education-card">
+                <h2>B.Sc. Computer Science</h2>
+                <p>Yashavantrao Mohite College of Arts, Science, and Commerce</p>
+                <p>2021 - Present</p>
+                <a href="link_to_bsc_certificate" class="btn">View Certificate</a>
+                <!-- Add the URL to the certificate -->
+            </div>
+            <div class="education-card">
+                <h2>Higher Secondary Certificate (HSC)</h2>
+                <p>Pawana Jr. College of Science</p><br>
+                <p>Year of Completion: 2022</p>
+                <a href="link_to_hsc_certificate" class="btn">View Certificate</a>
+                <!-- Add the URL to the certificate -->
+            </div>
+            <div class="education-card">
+                <h2>Secondary School Certificate (SSC)</h2>
+                <p>Varu-Kothurne Madhyamik Vidyalaya</p>
+                <p>Year of Completion: 2020</p>
+                <a href="link_to_ssc_certificate" class="btn">View Certificate</a>
+                <!-- Add the URL to the certificate -->
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="section6">
+        <h1 style="text-align: center; color: #ffffff; font-size:36px">Achievements</h1><br>
+        <div class="certificates-container">
+            <div class="certificate-card">
+                <img src="psql.png" alt="PostgreSQL Certification">
+                <h2>PostgreSQL Certification</h2>
+                <a href="psql.png" target="_blank" class="btn">Get Certificate</a>
+            </div>
+            <div class="certificate-card">
+                <img src="iic summit.png" alt="IIC Summit Certificate">
+                <h2>IIC Summit Participation</h2>
+                <a href="iic summit.png" target="_blank" class="btn">Get Certificate</a>
+            </div>
+            <div class="certificate-card">
+                <img src="java.png" alt="Java Certification">
+                <h2>Java <br> Certification</h2>
+                <a href="java.png" target="_blank" class="btn">Get Certificate</a>
+            </div>
+            <div class="certificate-card">
+                <img src="javascript.png" alt="JavaScript Certification">
+                <h2>JavaScript Certification</h2>
+                <a href="javascript.png" target="_blank" class="btn">Get Certificate</a>
+            </div>
+            <div class="certificate-card">
+                <img src="python.png" alt="Python Certification">
+                <h2>Python Certification</h2>
+                <a href="python.png" target="_blank" class="btn">Get Certificate</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="section4">
+        <h1>Skills</h1>
+        <p>Here are the skills I have acquired over time.</p>
+
+        <div class="skills-container">
+            <div class="card">
+                <h2>Full-Stack Development</h2>
+                <p>Experienced in building robust, scalable, and efficient web applications from front-end to back-end.
+                </p>
+            </div>
+            <div class="card">
+                <h2>SQL & PL-SQL</h2>
+                <p>Proficient in SQL databases and PL-SQL programming for complex queries and database management.</p>
+            </div>
+            <div class="card">
+                <h2>Python Programming</h2>
+                <p>Skilled in Python programming for data analysis, automation, and backend services.</p>
+            </div>
+            <div class="card">
+                <h2>Angular</h2>
+                <p>Building dynamic, responsive single-page applications using Angular framework.</p>
+            </div>
+            <div class="card">
+                <h2>React.js</h2>
+                <p>Experienced in building interactive user interfaces with React.js.</p>
+            </div>
+            <div class="card">
+                <h2>Node.js</h2>
+                <p>Developing fast and scalable server-side applications using Node.js.</p>
+            </div>
+            <div class="card">
+                <h2>Spring & Spring Boot</h2>
+                <p>Expertise in Java-based Spring and Spring Boot for building enterprise-level applications.</p>
+            </div>
+            <div class="card">
+                <h2>HTML, CSS, & JavaScript</h2>
+                <p>Strong foundation in web development with expertise in HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="card">
+                <h2>RESTful Services</h2>
+                <p>Designing and developing RESTful APIs for seamless communication between client and server.</p>
+            </div>
+            <div class="card">
+                <h2>Database Management</h2>
+                <p>Efficient in designing, managing, and optimizing databases for various applications.</p>
+            </div>
+            <div class="card">
+                <h2>Version Control with Git</h2>
+                <p>Experienced with Git for version control and collaborative development.</p>
+            </div>
+            <div class="card">
+                <h2>Cloud Platforms: AWS & Azure</h2>
+                <p>Proficient in deploying, managing, and scaling applications on AWS and Azure.</p>
+            </div>
+            <div class="card">
+                <h2>Project Management</h2>
+                <p>Skilled in managing projects, ensuring timely delivery and team collaboration.</p>
+            </div>
+            <div class="card">
+                <h2>Communication</h2>
+                <p>Excellent verbal and written communication skills for smooth collaboration.</p>
+            </div>
+            <div class="card">
+                <h2>Team Leading</h2>
+                <p>Capable of leading teams effectively, fostering innovation and productivity.</p>
+            </div>
+            <div class="card">
+                <h2>Self-Awareness</h2>
+                <p>Focused on continuous self-improvement, understanding strengths and areas to develop.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="section5">
+        <h1>Projects</h1>
+        <p>Information about the projects I have worked on can be found here.</p><br>
+        <div class="projects-container">
+            <div class="project-card">
+                <h2><b>QuantumCorp</b></h2>
+                <p>Quantum Corp is a comprehensive company management system designed to streamline business operations
+                    and enhance productivity.</p>
+                <button
+                    onclick="window.location.href='https://github.com/sarthak-13N/company-management-system-angula17-restapi-mysql.git'">View
+                    Project</button>
+            </div>
+            <div class="project-card">
+                <h2>E-Tech</h2>
+                <p>E-Tech is an innovative e-learning platform designed to provide accessible and engaging educational
+                    content.</p><br>
+                <button onclick="window.location.href='https://github.com/sarthak-13N/ELearning1.git'">View
+                    Project</button>
+            </div>
+            <div class="project-card">
+                <h2>AbsenSync</h2>
+                <p>AbsenSync is a streamlined leave management application designed for efficient tracking and approval
+                    of employee leave requests.</p><br>
+                <button onclick="window.location.href='https://github.com/sarthak-13N/Leave.Angular.git'">View
+                    Project</button>
+            </div>
+            <!-- Add more project cards as needed -->
+        </div><br>
+    </section>
+
+    <section class="section2" id="section7">
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <form id="registrationForm" action="https://api.web3forms.com/submit" method="POST">
+
+                <input type="hidden" name="access_key" value="dde327b3-a6c1-4021-8c4f-080038214f92">
+
+                <!-- <label for="full-name">Full Name:</label> -->
+                <input type="text" id="full-name" name="full-name" required placeholder="Full Name*"> <br>
+
+                <!-- <label for="email">Email:</label> -->
+                <input type="email" id="email" name="email" required placeholder="Email Id*"><br>
+
+                <!-- <label for="phone">Phone Number:</label> -->
+                <input type="tel" id="phone" name="phone" required minlength="10" maxlength="10" pattern="\d{10,10}"
+                    title="Phone number must be 10 digits" placeholder="Phone Number*"><br>
+
+
+                <!-- <label for="message">Message:</label> -->
+                <textarea id="message" name="message" rows="3" required placeholder="Message*"></textarea><br>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+    <footer style="background-color: #333; padding: 20px 0; color: #fff;">
+        <center>
+            <div class="contact-icons">
+                <a href="mailto:sarthknimble@outlook.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="tel:+918421851149" title="Call">
+                    <i class="fas fa-phone"></i>
+                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://wa.me/918421851149" title="WhatsApp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://github.com/sarthak-13N/" title="GitHub" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://www.linkedin.com/in/sarthak-nimble1642" title="LinkedIn" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+            </div><br>
+            <address>
+                <p>Email: <a href="mailto:sarthknimble@outlook.com"
+                        style="color: #96d0fd;">sarthknimble@outlook.com</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Phone: +91-8421851149
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Location: Pune, Maharashtra, India</p>
+
+            </address>
+        </center>
+    </footer><br>
+
+</body>
+
+</html>
