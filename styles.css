@@ -47,7 +47,7 @@ body {
 }
 
 .logo img {
-    height: 100%; /* Ensures the image fits the logo container */
+    height: 35px; /* Ensures the image fits the logo container */
     width: auto;  /* Maintains the image aspect ratio */
 }
 
