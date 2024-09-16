@@ -42,9 +42,13 @@ body {
 }
 
 .logo {
-    font-size: 15px;
-    text-decoration: none;
-    color: #fff;
+    height: 35px; /* Adjust height as needed */
+    width: auto;
+}
+
+.logo img {
+    height: 100%; /* Ensures the image fits the logo container */
+    width: auto;  /* Maintains the image aspect ratio */
 }
 
 .nav-links {
