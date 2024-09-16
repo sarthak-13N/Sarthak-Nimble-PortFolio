@@ -500,3 +500,52 @@ section {
         padding: 8px 12px;
     }
 }
+
+/* Base styling for address */
+address {
+    font-style: normal;
+    margin: 20px 0;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #333;
+    width: 21.7%;
+
+}
+
+/* Styling for the links */
+address a {
+    color: #96d0fd;
+    text-decoration: none;
+}
+
+address a:hover {
+    text-decoration: underline;
+}
+
+/* Style for paragraphs inside address */
+address p {
+    margin: 5px 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+/* Style for span elements inside paragraphs */
+address span {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    address {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    address p {
+        margin: 10px 0;
+    }
+}
